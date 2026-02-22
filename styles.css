@@ -42,8 +42,14 @@ h2{
     color: red;
     font-weight: 600;
     margin: 10px;
+    display: none;
 
 }
+
+.btn{
+  text-transform: uppercase;
+}
+
 .gallery img{
     width: 400px;
     height: 250px;
