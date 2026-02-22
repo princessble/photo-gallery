@@ -48,6 +48,10 @@ h2{
 
 .btn{
   text-transform: uppercase;
+  width: 250px;
+  height: 45px;
+  margin: 20px 0;
+  font-size: 18px;
 }
 
 .gallery img{
