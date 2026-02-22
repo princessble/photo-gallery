@@ -58,7 +58,10 @@ h2{
 }
 
 .btn:hover{
-
+   color: black;
+   border: green;
+   cursor: pointer;
+   transition: background-color 250 ease-in-out;
 }
 
 .gallery img{
