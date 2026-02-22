@@ -18,9 +18,15 @@ body{
     margin: 10px;
     display: flex;
     flex-direction: column;
+    
 }
 h2{
     font-weight: 400;
+}
+.input{
+    padding: 20px 10px;
+    font-size: 18px;
+
 }
 .gallery img{
     width: 400px;
