@@ -15,6 +15,7 @@ body{
     border-radius: 5px;
     box-shadow: 0 10px 20px rgba(red, green, blue, alpha);
     width: 90%;
+    margin: 10px;
 }
 .gallery img{
     width: 400px;
