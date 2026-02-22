@@ -52,6 +52,13 @@ h2{
   height: 45px;
   margin: 20px 0;
   font-size: 18px;
+  border-radius: 6px;
+  background-color: #9e1f9e;
+  color: black;
+}
+
+.btn:hover{
+
 }
 
 .gallery img{
