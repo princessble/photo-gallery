@@ -2,6 +2,7 @@
 body{
     margin: 0;
     font: Arial, Courier;
+    background: -moz-linear-gradient(to bottom, lightblue, purple);
 }
 
 .gallery img{
