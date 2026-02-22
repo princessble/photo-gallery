@@ -4,7 +4,7 @@ body{
    font-family: Arial, Courier, sans-serif;
     background: linear-gradient(to bottom, lightblue, purple);
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -70,4 +70,8 @@ h2{
     object-fit: cover;
     border-radius: 5px;
     margin: 5px;
+}
+
+.gallery{
+    display: none;
 }
