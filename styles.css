@@ -1,8 +1,8 @@
 
 body{
     margin: 0;
-    font: Arial, Courier;
-    background: -moz-linear-gradient(to bottom, lightblue, purple);
+   font-family: Arial, Courier, sans-serif;
+    background: linear-gradient(to bottom, lightblue, purple);
     display: flex;
     height: 100vh;
     justify-content: center;
