@@ -5,6 +5,7 @@ body{
     background: -moz-linear-gradient(to bottom, lightblue, purple);
     display: flex;
     height: 100vh;
+    justify-content: center;
 }
 
 .gallery img{
