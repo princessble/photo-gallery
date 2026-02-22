@@ -9,6 +9,7 @@ body{
     align-items: center;
     text-align: center;
 }
+
 .container{
     background-color: blue;
     padding: 20px;
@@ -22,9 +23,11 @@ body{
     justify-items: center;
     align-items: center;
 }
+
 h2{
     font-weight: 400;
 }
+
 .input{
     padding: 20px 10px;
     font-size: 18px;
@@ -32,6 +35,13 @@ h2{
     border-radius: 5px;
     text-align: center;
     width: 100px;
+
+}
+
+.errorMessage{
+    color: red;
+    font-weight: 600;
+    margin: 10px;
 
 }
 .gallery img{
