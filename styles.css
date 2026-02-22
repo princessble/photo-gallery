@@ -10,7 +10,9 @@ body{
     text-align: center;
 }
 .container{
-    
+    background-color: blue;
+    padding: 20px;
+    border-radius: 5px;
 }
 .gallery img{
     width: 400px;
