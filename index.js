@@ -1,3 +1,7 @@
 const btnEl = document.getElementById("btn")
 
-btnEl.addEventListener("click", loadImage)
+
+function fetchImage(){
+    console.log("click")
+}
+btnEl.addEventListener("click", fetchImage)
