@@ -12,7 +12,7 @@ async function fetchImage() {
 
   try {
     const res = await fetch(
-      `https://api.unsplash.com/photos?per_page=${inputValue}&page=${math.round(math.random * 1000)}&client_id=vQ1ZD-c6ZJO_P_i0DIj0IRkNXfabmwygdgBwbFkBiaA`
+      `https://api.unsplash.com/photos?per_page=${inputValue}&page=${math.round(math.random() * 1000)}&client_id=vQ1ZD-c6ZJO_P_i0DIj0IRkNXfabmwygdgBwbFkBiaA`
     );
 
     const data = await res.json();
