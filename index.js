@@ -18,6 +18,13 @@ async function fetchImage() {
 
     const data = await res.json();
     console.log(data);
+    if(data){
+        data.forEach((pick)=>{ 
+          console.log(pick.url.small);
+        } )
+
+        }
+    }
 
     errorMessageEl.style.display = "none";
   } catch (error) {
