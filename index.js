@@ -1,5 +1,6 @@
 const btnEl = document.getElementById("btn");
 const errorMessageEl = document.getElementById("errorMessage");
+const galleryE1 = document.getElementById("gallery")
 
 async function fetchImage() {
   const inputValue = document.getElementById("input").value;
