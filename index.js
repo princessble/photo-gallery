@@ -8,6 +8,7 @@ function fetchImage(){
 
     if(inputValue > 20 || inputValue < 1){
         errorMessageE1.style.display = "block";
+        errorMessageE1.innerText = "number should be between 0 and 21"
         return
 
     }
