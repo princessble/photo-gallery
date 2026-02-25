@@ -14,6 +14,7 @@ async function fetchImage() {
   let imgs = "";
 
   try {
+    btnEl.style.display ="none";
     const res = await fetch(
       `https://api.unsplash.com/photos?per_page=${inputValue}&page=${Math.round(Math.random() * 1000)}&client_id=vQ1ZD-c6ZJO_P_i0DIj0IRkNXfabmwygdgBwbFkBiaA`
     );
@@ -30,6 +31,7 @@ async function fetchImage() {
 
       galleryEl.style.display = "block";
       galleryEl.innerHTML = imgs;
+      btnEl.style.display = "none";
     }
 
     errorMessageEl.style.display = "none";
