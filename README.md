@@ -77,7 +77,7 @@ This is the workflow I followed to build the project from start to finish:
 
 I validate my HTML to ensure it follows web standards and best practices.
 
-![HTML Validator result](assets/readme/html-validator.png)
+![HTML Validator result](assets/html-validator.png)
 
 - Validator: https://validator.w3.org/  
 - Method used: Validate by URL / File Upload / Direct Input  
