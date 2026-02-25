@@ -22,6 +22,11 @@ body {
   align-items: center;
 }
 
+h1 {
+  color: white;
+  margin: 0 0 10px;
+}
+
 h2 {
   font-weight: 400;
   color: white;
@@ -69,15 +74,16 @@ h2 {
   cursor: not-allowed;
 }
 
+/* ✅ Gallery stays available so spinner can show */
 .gallery {
-  display: none;
   margin-top: 20px;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 10px;
-  width: 100%;
 }
 
+/* Images */
 .gallery img {
   width: 100%;
   height: 200px;
@@ -92,6 +98,7 @@ h2 {
   margin: 30px auto;
   animation: spin 1s linear infinite;
   display: block;
+  grid-column: 1 / -1; /* ✅ center spinner across grid */
 }
 
 @keyframes spin {
