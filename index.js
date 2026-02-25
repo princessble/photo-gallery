@@ -1,6 +1,6 @@
 const btnEl = document.getElementById("btn");
 const errorMessageEl = document.getElementById("errorMessage");
-const galleryE1 = document.getElementById("gallery")
+const galleryEl = document.getElementById("gallery");
 
 async function fetchImage() {
   const inputValue = document.getElementById("input").value;
@@ -11,24 +11,25 @@ async function fetchImage() {
     return;
   }
 
-  img = "";
+  let imgs = "";
+
   try {
     const res = await fetch(
-      `https://api.unsplash.com/photos?per_page=${inputValue}&page=${math.round(math.random() * 1000)}&client_id=vQ1ZD-c6ZJO_P_i0DIj0IRkNXfabmwygdgBwbFkBiaA`
+      `https://api.unsplash.com/photos?per_page=${inputValue}&page=${Math.round(Math.random() * 1000)}&client_id=vQ1ZD-c6ZJO_P_i0DIj0IRkNXfabmwygdgBwbFkBiaA`
     );
 
     const data = await res.json();
     console.log(data);
-    if(data){
-        data.forEach((pick)=>{ 
-          imgs +=` 
-          <img src=${pics.urls.small} alt="image"/>
-          `;
-          galleryE1.style.display ="block"
-          galleryEl.innerHTML = imgs;
-        } )
 
-        }
+    if (data) {
+      data.forEach((pics) => {
+        imgs += `
+          <img src="${pics.urls.small}" alt="image"/>
+        `;
+      });
+
+      galleryEl.style.display = "block";
+      galleryEl.innerHTML = imgs;
     }
 
     errorMessageEl.style.display = "none";
