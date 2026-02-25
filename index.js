@@ -15,30 +15,25 @@ async function fetchImage() {
 
   try {
     errorMessageEl.style.display = "none";
-
-    // disable button while loading (better than hiding)
     btnEl.disabled = true;
 
-    // show loader (IMPORTANT: add class="spinner")
+    // ✅ CSS spinner (no svg file needed)
     galleryEl.style.display = "grid";
-    galleryEl.innerHTML = `<img src="spinner.svg" class="spinner" alt="loading..." />`;
+    galleryEl.innerHTML = `<div class="spinner"></div>`;
 
     const res = await fetch(
       `https://api.unsplash.com/photos?per_page=${inputValue}&page=${Math.floor(Math.random() * 1000) + 1}&client_id=vQ1ZD-c6ZJO_P_i0DIj0IRkNXfabmwygdgBwbFkBiaA`
     );
 
     const data = await res.json();
-    console.log(data);
 
-    if (Array.isArray(data)) {
-      data.forEach((pics) => {
-        imgs += `<img src="${pics.urls.small}" alt="image" />`;
-      });
+    if (!Array.isArray(data)) throw new Error("Unexpected API response");
 
-      galleryEl.innerHTML = imgs; // grid stays
-    } else {
-      throw new Error("Unexpected API response");
-    }
+    data.forEach((pics) => {
+      imgs += `<img src="${pics.urls.small}" alt="image" />`;
+    });
+
+    galleryEl.innerHTML = imgs;
   } catch (error) {
     console.error("Error fetching images:", error);
     errorMessageEl.style.display = "block";
