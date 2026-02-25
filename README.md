@@ -45,7 +45,7 @@ This project is responsive and adapts smoothly to different screen sizes (mobile
 
 <p align="center">
   
-  <img src="assets/responsive.png" alt="Desktop & mobile view" width="520" />
+  <img src="assets/responsive.png" alt="Desktop & mobile view" width="600" />
 </p>
 
 **How responsiveness is achieved:**
