@@ -14,7 +14,7 @@ A simple and beautiful **Photo Gallery web app** that lets users generate a gall
 - 🚀 Works perfectly on GitHub Pages (no API keys required)  
 - 📱 Mobile-friendly layout  
 
----
+---![alt text](image.png)
 
 ## 🛠️ Tech Stack
 
