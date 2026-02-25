@@ -60,7 +60,7 @@ This project is responsive and adapts smoothly to different screen sizes (mobile
 
 This is the workflow I followed to build the project from start to finish:
 
-![Project workflow](assets/readme/workflow.png)
+![Project workflow](assets/workflow.png)
 
 **Steps:**
 1. Planned the UI and user flow  
