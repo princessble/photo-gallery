@@ -14,9 +14,13 @@ async function fetchImage() {
   let imgs = "";
 
   try {
-    btnEl.style.display ="none";
-    const loading = `<img src="spinner.svg"/>;`
+    // hide button while loading
+    btnEl.style.display = "none";
+
+    // show loader
+    const loading = `<img src="spinner.svg" alt="loading..." />`;
     galleryEl.innerHTML = loading;
+
     const res = await fetch(
       `https://api.unsplash.com/photos?per_page=${inputValue}&page=${Math.round(Math.random() * 1000)}&client_id=vQ1ZD-c6ZJO_P_i0DIj0IRkNXfabmwygdgBwbFkBiaA`
     );
@@ -33,7 +37,6 @@ async function fetchImage() {
 
       galleryEl.style.display = "block";
       galleryEl.innerHTML = imgs;
-      btnEl.style.display = "none";
     }
 
     errorMessageEl.style.display = "none";
@@ -41,6 +44,9 @@ async function fetchImage() {
     console.error("Error fetching images:", error);
     errorMessageEl.style.display = "block";
     errorMessageEl.innerText = "Something went wrong. Try again!";
+  } finally {
+    // always show button again (success or error)
+    btnEl.style.display = "inline-block";
   }
 }
 
