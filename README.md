@@ -88,7 +88,7 @@ I validate my HTML to ensure it follows web standards and best practices.
 
 I validate my CSS to ensure it is clean and standards-compliant.
 
-![CSS Validator result](assets/readme/css-validator.png)
+![CSS Validator result](assets/css-validator.png)
 
 - Validator: https://jigsaw.w3.org/css-validator/  
 - Method used: By URL / File Upload / Direct Input  
