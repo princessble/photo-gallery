@@ -2,58 +2,68 @@ const btnEl = document.getElementById("btn");
 const errorMessageEl = document.getElementById("errorMessage");
 const galleryEl = document.getElementById("gallery");
 
-const ACCESS_KEY = "vQ1ZD-c6ZJO_P_i0DIj0IRkNXfabmwygdgBwbFkBiaA"; // Unsplash Access Key
+// ⚠️ Your Unsplash Access Key (public on GitHub Pages can be abused)
+const ACCESS_KEY = "vQ1ZD-c6ZJO_P_i0DIj0IRkNXfabmwygdgBwbFkBiaA";
 
 async function fetchImage() {
   const inputValue = Number(document.getElementById("input").value);
 
+  // validate input
   if (inputValue > 20 || inputValue < 1) {
     errorMessageEl.style.display = "block";
     errorMessageEl.innerText = "Number should be between 1 and 20";
     return;
   }
 
+  // loading UI
   errorMessageEl.style.display = "none";
   btnEl.disabled = true;
-
-  // ✅ CSS spinner (no svg file needed)
-  galleryEl.style.display = "grid";
   galleryEl.innerHTML = `<div class="spinner"></div>`;
 
   try {
     const page = Math.floor(Math.random() * 1000) + 1;
 
     const res = await fetch(
-      `https://api.unsplash.com/photos?per_page=${inputValue}&page=${page}&client_id=${ACCESS_KEY}`
+      `https://api.unsplash.com/photos?per_page=${inputValue}&page=${page}`,
+      {
+        headers: {
+          Authorization: `Client-ID ${ACCESS_KEY}`,
+        },
+      }
     );
 
-    // ✅ If API fails, don't try res.json()
+    // handle non-JSON errors like "Rate Limit Exceeded"
     if (!res.ok) {
-      const errorText = await res.text(); // often "Rate Limit Exceeded"
-      throw new Error(`Unsplash error ${res.status}: ${errorText}`);
+      const text = await res.text();
+
+      if (res.status === 403 && text.toLowerCase().includes("rate")) {
+        throw new Error("RATE_LIMIT");
+      }
+
+      throw new Error(`REQUEST_FAILED_${res.status}`);
     }
 
     const data = await res.json();
 
-    let imgs = "";
-    data.forEach((pics) => {
-      imgs += `<img src="${pics.urls.small}" alt="image" />`;
-    });
+    if (!Array.isArray(data)) {
+      throw new Error("BAD_RESPONSE");
+    }
 
-    galleryEl.innerHTML = imgs;
+    galleryEl.innerHTML = data
+      .map((pic) => `<img src="${pic.urls.small}" alt="image" />`)
+      .join("");
   } catch (error) {
     console.error("Error fetching images:", error);
 
-    errorMessageEl.style.display = "block";
+    galleryEl.innerHTML = "";
 
-    if (String(error.message).includes("Rate Limit")) {
+    errorMessageEl.style.display = "block";
+    if (error.message === "RATE_LIMIT") {
       errorMessageEl.innerText =
         "Unsplash rate limit exceeded. Try again later or use a new API key.";
     } else {
       errorMessageEl.innerText = "Something went wrong. Try again!";
     }
-
-    galleryEl.innerHTML = "";
   } finally {
     btnEl.disabled = false;
   }
