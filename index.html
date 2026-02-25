@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="author" content="Blessing Fortune Kwomo">
-    <meta name="description" content="photo Gallery">
-    <meta name="keywords" content="photo, gallery, collections">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Picture Gallery</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="author" content="Blessing Fortune Kwomo" />
+  <meta name="description" content="photo Gallery" />
+  <meta name="keywords" content="photo, gallery, collections" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Picture Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-    <div class="container">
-        <h1>Photo Gallery</h1>
-        <h2>Enter the number of photos</h2>
-        <input type="number" id="input" class="input" value="2" min="1" max="20">
-        <small class="errorMessage" id="errorMessage">Error Message</small>
-        <button class="btn" id="btn">get pictures</button>
-        <div class="gallery" id="gallery">
-            <img src="https://images.unsplash.com/photo-1562263315-5be44408966e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="giraffe safari images">
-            <img src="https://images.unsplash.com/photo-1645689876878-6137f4f9785e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="savanna safari image">
-            <img src="https://images.unsplash.com/photo-1664093674878-d449544ad31a?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="savanah rain forest">
-            <img src="https://images.unsplash.com/photo-1633345778967-3760204a4c57?q=80&w=1245&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="savanah image">
-            <img src="https://images.unsplash.com/photo-1519659528534-7fd733a832a0?q=80&w=1026&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="savaanah 3">
-            <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGtlbnlhfGVufDB8fDB8fHww" alt="savannah 4">
-        </div>
-    </div>
-    <script src="index.js"></script>
+  <div class="container">
+    <h1>Photo Gallery</h1>
+    <h2>Enter the number of photos</h2>
+
+    <input
+      type="number"
+      id="input"
+      class="input"
+      value="2"
+      min="1"
+      max="20"
+    />
+
+    <small class="errorMessage" id="errorMessage"></small>
+
+    <button class="btn" id="btn">Get Pictures</button>
+
+    <div class="gallery" id="gallery"></div>
+  </div>
+
+  <script src="index.js"></script>
 </body>
 </html>
