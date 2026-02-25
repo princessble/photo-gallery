@@ -11,6 +11,7 @@ async function fetchImage() {
     return;
   }
 
+  img = "";
   try {
     const res = await fetch(
       `https://api.unsplash.com/photos?per_page=${inputValue}&page=${math.round(math.random() * 1000)}&client_id=vQ1ZD-c6ZJO_P_i0DIj0IRkNXfabmwygdgBwbFkBiaA`
@@ -20,7 +21,11 @@ async function fetchImage() {
     console.log(data);
     if(data){
         data.forEach((pick)=>{ 
-          console.log(pick.url.small);
+          imgs +=` 
+          <img src=${pics.urls.small} alt="image"/>
+          `;
+          galleryE1.style.display ="block"
+          galleryEl.innerHTML = imgs;
         } )
 
         }
